@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando DOM e JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="pai">
+        <img src="img/logo.jpg" id="logo">
+        <p id="sub-logo">O diário dos seus sonhos...</p>
+    </div>
+
+    <div class="in">
+        <input type="text" id="inpt" placeholder="Digite alguma coisa...">
+        <input type="button" id="btn1" class="btn-in" onclick="Exibir()" value="Enviar">
+        <input type="button" id="btn2" class="btn-in" onclick="" value="Apagar">
+    </div>
+
+    <div class="out">
+        <p id="output"></p>
+    </div>
+
+</body>
+<script>
+    const entrada = document.getElementById('inpt');
+    const botaoEnviar = document.getElementById('btn1');
+    const botaoApagar = document.getElementById('btn2');
+    const saida = document.getElementById('output')
+
+
+
+    function Exibir() {
+        var elemento_pai = document.body;
+        var paragrafo = document.createElement('p');
+
+        paragrafo.textContent = entrada.value;
+        elemento_pai.appendChild(paragrafo);
+
+        paragrafo.style.backgroundColor = "#83C5BE";
+        paragrafo.style.borderRadius = "5px";
+        paragrafo.style.padding = "3% 3% 3% 5%";
+        paragrafo.style.width = "60%";
+        paragrafo.style.height = "auto";
+        
+    }
+
+</script>
+
+
+</html>

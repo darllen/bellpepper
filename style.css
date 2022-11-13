@@ -1,0 +1,64 @@
+/*
+#F1FFFA
+#83C5BE
+#006D77
+#A6A6A6
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Playfair+Display&display=swap');
+
+body {
+    background: linear-gradient(to left, #F1FFFA, white);
+}
+
+.pai {
+    display: flex;
+}
+
+#logo {
+    height: 200px;
+    width: 200px;
+    margin-left: 10%;
+}
+
+#sub-logo {
+    color: #006D77;
+    margin-left: 10%;
+    margin-top: 80px;
+    font-size: 18px;
+    /* font-family: 'Hammersmith One', sans-serif; */
+    font-family: 'Playfair Display', serif;
+}
+
+.in {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.in #inpt {
+    width: 40%;
+    height: 10vh;
+    border-radius: 5px;
+    border-color: #83C5BE;
+}
+
+.btn-in {
+    margin-left: 3%;
+    background-color: #006D77;
+    color: white;
+    width: 80px;
+    height: 4vh;
+    border-radius: 3px;
+    box-shadow: #006D77;
+    font-weight: bold;
+}
+
+.out {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
