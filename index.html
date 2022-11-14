@@ -6,13 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usando DOM e JS</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="nav-bar">
+        <div class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z"/></svg>
+        </div>
+
+        <p class="menu-p" >DREAM ON</p>
+
+
+        <div class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z"/></svg>
+
+        </div>
+
+        
+    </div>
     <div class="pai">
-        <img src="img/logo.jpg" id="logo">
-        <p id="sub-logo">O diário dos seus sonhos...</p>
+        <div class="filho">
+
+            <img src="img/logo.jpg" id="logo">
+            <p id="sub-logo">O diário dos seus sonhos...</p>
+        </div>
     </div>
 
     <div class="in">
@@ -26,30 +45,8 @@
     </div>
 
 </body>
-<script>
-    const entrada = document.getElementById('inpt');
-    const botaoEnviar = document.getElementById('btn1');
-    const botaoApagar = document.getElementById('btn2');
-    const saida = document.getElementById('output')
 
-
-
-    function Exibir() {
-        var elemento_pai = document.body;
-        var paragrafo = document.createElement('p');
-
-        paragrafo.textContent = entrada.value;
-        elemento_pai.appendChild(paragrafo);
-
-        paragrafo.style.backgroundColor = "#83C5BE";
-        paragrafo.style.borderRadius = "5px";
-        paragrafo.style.padding = "3% 3% 3% 5%";
-        paragrafo.style.width = "60%";
-        paragrafo.style.height = "auto";
-        
-    }
-
-</script>
+<script src="index.js"></script>
 
 
 </html>
