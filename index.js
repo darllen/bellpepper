@@ -1,39 +1,27 @@
 function Exibir() {
     var body = document.body;
-    var div = document.createElement('div');
-    body.appendChild(div);
 
-    var paragrafo = document.createElement('p');
+    var divList = document.getElementById('list');
+    let item = document.createElement('div')
+    let itemText = document.createElement('div')
+    let itemActions = document.createElement('div')
+    
+    divList.appendChild(item)
+    
+    item.appendChild(itemText)
+    item.appendChild(itemActions)
+    
+    let paragrafo = document.createElement('p');
     paragrafo.textContent = entrada.value;
-    div.appendChild(paragrafo);
+    
+    
+    item.classList.add('item')
+    itemText.classList.add('item-text')
+    
+    itemActions.outerHTML += '<div class="item-actions"><svg xmlns="http://www.w3.org/2000/svg" class="primary-button" height="32" width="32" viewbox="0 0 48 48"><path d="M13.05 42q-1.25 0-2.125-.875T10.05 39V10.5H8v-3h9.4V6h13.2v1.5H40v3h-2.05V39q0 1.2-.9 2.1-.9.9-2.1.9Zm21.9-31.5h-21.9V39h21.9Zm-16.6 24.2h3V14.75h-3Zm8.3 0h3V14.75h-3Zm-13.6-24.2V39Z"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="secondary-button" height="32" width="32" viewbox="-5 0 58 58"><path d="M9 47.4q-1.2 0-2.1-.9-.9-.9-.9-2.1v-30q0-1.2.9-2.1.9-.9 2.1-.9h20.25l-3 3H9v30h30V27l3-3v20.4q0 1.2-.9 2.1-.9.9-2.1.9Zm15-18Zm9.1-17.6 2.15 2.1L21 28.1v4.3h4.25l14.3-14.3 2.1 2.1L26.5 35.4H18v-8.5Zm8.55 8.4-8.55-8.4 5-5q.85-.85 2.125-.85t2.125.9l4.2 4.25q.85.9.85 2.125t-.9 2.075Z"/></svg></div>' 
+    itemText.appendChild(paragrafo);
+    
 
-    var icone_editar = document.createElement('img');
-    icone_editar.src = 'img/editar.jpg';
-    div.appendChild(icone_editar);
-
-    var icone_excluir = document.createElement('img');
-    icone_excluir.src = 'img/excluir.png';
-    div.appendChild(icone_excluir);
-
-
-    div.style.display = 'flex';
-    div.style.alignItems = 'center';
-    div.style.justifyContent = 'center';
-    div.style.marginBottom = '3%';
-
-    paragrafo.style.backgroundColor = '#FFFFFF';
-    paragrafo.style.color = '#284982';
-    paragrafo.style.boxShadow = '0px 2px 5px 0px rgba(0, 0, 0, 0.25)';
-    paragrafo.style.width = '40%'; 
-    paragrafo.style.height = '5vh'; 
-    paragrafo.style.paddingLeft = '1em';
-    paragrafo.style.paddingTop = '1em';
-
-    icone_editar.style.width = '35px';
-    icone_editar.style.marginLeft = '2%'
-
-    icone_excluir.style.width = '35px';
-    icone_excluir.style.marginLeft = '2%'
 
     document.getElementById('inpt').value = "";
 
@@ -41,7 +29,6 @@ function Exibir() {
 
 const entrada = document.getElementById('inpt');
 const botaoEnviar = document.getElementById('btn');
-const saida = document.getElementById('output')
 
 var initialText = document.getElementById('sub-logo')
 initialText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
