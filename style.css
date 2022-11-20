@@ -144,7 +144,7 @@ nav img {
 
 }
 
-.secondary-button:hover {
+.secondary-button {
     transition: 0.3s;
 }
 

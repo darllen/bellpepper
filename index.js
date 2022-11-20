@@ -1,6 +1,4 @@
 function Exibir() {
-    var body = document.body;
-
     var divList = document.getElementById('list');
     let item = document.createElement('div')
     let itemText = document.createElement('div')
