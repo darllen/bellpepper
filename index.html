@@ -22,7 +22,7 @@
     </div>
 
     <form action="" class="in">
-        <input onclick="startListener(this)" onmouseover="Normal(this);" type="text" id="inpt" placeholder="Digite alguma coisa...">
+        <input onclick="startListener(this)" type="text" id="inpt" placeholder="Digite alguma coisa...">
         <input type="button" id="btn" class="btn-in" onclick="Exibir()" value="Enviar">
     </form>
 
@@ -30,6 +30,16 @@
     <div id="list" class="list">
     </div>
 
+    <div class="overlay">
+        <div class="card-overlay">
+            <div class="close-line">
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" width="36" viewbox="0 0 48 48" onclick="overlay('close')" ><path d="m12.65 36.45-1.1-1.1L22.9 24 11.55 12.65l1.1-1.1L24 22.9l11.35-11.35 1.1 1.1L25.1 24l11.35 11.35-1.1 1.1L24 25.1Z"/></svg>
+            </div>
+            <div>
+                <h1>Em construção (Mensagem de campo vazio)</h1>
+            </div>
+        </div>
+    </div>
 
 </body>
 
