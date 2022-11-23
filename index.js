@@ -56,6 +56,7 @@ function focusIn(item) {
 
 function overlay(action = 'open') {
     let overlay = document.getElementsByClassName('overlay')
+    
     if (action == 'open') {
         overlay[0].style.display = 'grid'
     } else {
