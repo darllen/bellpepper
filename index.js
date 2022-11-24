@@ -36,6 +36,7 @@ function startListener(input) {
 }
 
 function updateInput(item) {
+    console.log(item)
     if (item.target.value) {
         item.target.style.border = "1px solid #FFA924";
 
@@ -55,20 +56,21 @@ function focusIn(item) {
 
 
 function overlay(action = 'open') {
-    let overlay = document.getElementsByClassName('overlay')
+    let overlay = document.getElementById('overlay')
     
     if (action == 'open') {
-        overlay[0].style.display = 'grid'
+        overlay.style.display = 'grid'
+
     } else {
-        overlay[0].style.display = 'none'
+        overlay.style.display = 'none'
     }
 }
 
+const deleteItem = item => ((item.parentElement).parentElement).remove()
 
 const entrada = document.getElementById('inpt');
 const botaoEnviar = document.getElementById('btn');
 
-const deleteItem = item => ((item.parentElement).parentElement).remove()
 
 var initialText = document.getElementById('sub-logo')
 initialText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
