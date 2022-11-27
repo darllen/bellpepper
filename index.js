@@ -63,6 +63,7 @@ function editItem(item) {
 
 /* Hover item session */
 function options(item, action) {
+    // if not item in edit: do it (to do)
     if (!inEdit){
         if (action == 'open') {
             item.target.children[2].style.display = 'grid'
