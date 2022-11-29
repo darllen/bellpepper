@@ -278,12 +278,18 @@ nav img:hover {
 
 .input-item {
   border: none;
-  border-bottom: 1px solid #284982;
+  display: none;
+  box-sizing: border-box;
   background-color: #a0c2fd;
-  text-align: center;
-  width: 60%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  width: 92%;
+  height: 50%;
   font-weight: bold;
+  font-size: 1.1em;
+  font-family: "Playfair Display", sans-serif;
+  letter-spacing: 1px;
   color: #284982;
+  padding-left: 4%;
 }
 
 .input-item:focus {
