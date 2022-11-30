@@ -157,6 +157,8 @@ nav img:hover {
 .checkinho {
   width: 23px;
   height: 23px;
+  cursor: pointer;
+
 }
 
 .item-actions {
