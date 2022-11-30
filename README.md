@@ -1,7 +1,8 @@
 # Bell Pepper
 
 # 💻 Sobre o projeto
-Página de checklist
+Página de checklist:
+https://darllen.github.io/bellpepper/
 
 ## Layout
 ![Desktop Layout](img/desktop_readme.png "Title")
@@ -10,4 +11,4 @@ Página de checklist
 
 - HTML
 - CSS
-- JS
+- JavaScript
