@@ -1,0 +1,22 @@
+{
+  "name": "bellpepper",
+  "version": "1.0.0",
+  "description": "Página de checklist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darllen/bellpepper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darllen/bellpepper/issues"
+  },
+  "homepage": "https://github.com/darllen/bellpepper#readme",
+  "dependencies": {
+    "axios": "^1.2.0"
+  }
+}
