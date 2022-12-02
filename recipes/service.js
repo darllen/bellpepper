@@ -1,4 +1,5 @@
-import axios from "../node_modules/axios"
+import axios from "axios"
+
 
 export function getRecipes(URL = 'https://voluble-conkies-26aad6.netlify.app/.netlify/functions/api') {
   debugger
