@@ -167,6 +167,21 @@ function overlay(action = "open") {
   }
 }
 
+/* Receitas listener session */
+function recipesStartListener(button) {
+  button.addEventListener("mouseover", () => {
+    debugger
+    label = document.getElementById('recipes-label-button')
+    label.style.display = 'inline'
+  })
+  button.addEventListener("mouseout", () => {
+    debugger
+    label = document.getElementById('recipes-label-button')
+    label.style.display = 'none'
+  })
+}
+/* session end */
+
 var inEdit = false;
 var defaultParagraphValue = ''
 

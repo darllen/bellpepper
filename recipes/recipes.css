@@ -1,0 +1,116 @@
+body {
+  background-color: #e6ebf6;
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.title {
+  font-weight: 700;
+  color: #284982;
+}
+.subtitle {
+  color: #d88b17;
+}
+
+.button-back {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #f8dcb0;
+  width: fit-content;
+  padding: 0.3rem 1.5rem;
+  border-radius: 2rem;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.button-back:hover {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  background-color: #ffd592;
+  
+}
+
+.button-back svg {
+  fill: #d88b17;
+}
+
+.button-back span {
+  color: #d88b17;
+  padding-top: 0.1rem;
+  font-weight: 700;
+}
+.button-back span:hover {
+  color: #d1830d;
+}
+
+.cards {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  row-gap: 2rem;
+  height: 100%;
+}
+
+.card{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  border-radius: 0.7rem;
+  height: 15rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden
+}
+
+.card:hover {
+    width: 51%;
+    height: 15.3rem;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.recipe-img {
+  height: 16rem;
+  width: 18rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  
+}
+.recipe-img:hover {
+  height: 16.3rem;
+}
+
+.recipe-title h2 {
+  color: #284982;
+}
+
+.recipe-box {
+  display: grid;
+  padding-left: 1.7rem;
+}
+
+.recipe-level {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.recipe-level span {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #4bb543;
+}
