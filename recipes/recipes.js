@@ -1,5 +1,3 @@
-console.log('oi')
-
 URL =  'https://voluble-conkies-26aad6.netlify.app/.netlify/functions/api'
 //URL =  'https://us-east1-dant-financeiro-359200.cloudfunctions.net/function-recipes'
 
