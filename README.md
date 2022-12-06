@@ -1,11 +1,11 @@
-# Bell Pepper
+# <a href="https://darllen.github.io/bellpepper/" target="_blank">👉 Bell Pepper</a>
 
 # 💻 Sobre o projeto
-Página de checklist:
-https://darllen.github.io/bellpepper/
+<p>Página de Checklist</p>
+
 
 ## Layout
-![Desktop Layout](img/desktop_readme.png "Title")
+![Desktop Layout](img/desktop.png "Title")
 
 # 🚀 **Techs**
 
