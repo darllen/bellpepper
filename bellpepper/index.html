@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bell pepper</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <img id="opcoes" src="img/opcoes.png" />
+      <img id="sair" src="img/sair.png" />
+    </nav>
+
+    <div class="pai">
+      <img src="img/logo.png" id="logo" />
+      <p id="sub-logo"></p>
+    </div>
+
+    <form onsubmit="Exibir();return false" class="in">
+      <input
+        onclick="startListener(this)"
+        type="text"
+        id="inpt"
+        placeholder="Digite alguma coisa..."
+      />
+      <button id="btn" class="btn-in" type="submit">Enviar</button>
+    </form>
+
+    <div id="list" class="list"></div>
+
+   <div class="overlay" id="overlay">
+        <div class="card-overlay">
+            <div class="close-line">
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" width="36" viewbox="0 0 48 48" onclick="overlay('close')"><path d="m12.65 36.45-1.1-1.1L22.9 24 11.55 12.65l1.1-1.1L24 22.9l11.35-11.35 1.1 1.1L25.1 24l11.35 11.35-1.1 1.1L24 25.1Z" /></svg>
+            </div>
+            <div>
+                <div class="title-line">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewbox="0 0 48 48" class="overlay-icon"><path d="M24 34q.7 0 1.175-.475.475-.475.475-1.175 0-.7-.475-1.175Q24.7 30.7 24 30.7q-.7 0-1.175.475-.475.475-.475 1.175 0 .7.475 1.175Q23.3 34 24 34Zm-1.35-7.65h3V13.7h-3ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z" /></svg>
+                    <h1>Preencha o campo</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipes-button-background" onmouseover="recipesStartListener(this)" onclick="location.href='/bellpepper/api/recipes.html'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="recipes-button" height="42" width="42" viewbox="0 0 45 50"><path d="M15.95 35.5h16.1v-3h-16.1Zm0-8.5h16.1v-3h-16.1ZM11 44q-1.2 0-2.1-.9Q8 42.2 8 41V7q0-1.2.9-2.1Q9.8 4 11 4h18.05L40 14.95V41q0 1.2-.9 2.1-.9.9-2.1.9Zm16.55-27.7V7H11v34h26V16.3ZM11 7v9.3V7v34V7Z"/></svg>
+      <div class="recipes-label-button" id="recipes-label-button">Receitas</div>
+    </div>
+  </body>
+
+  <script src="index.js"></script>
+</html>
