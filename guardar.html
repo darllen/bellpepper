@@ -22,42 +22,39 @@
     <img src="img/logo.png" id="logo" />
   </div>
 
+  <button id="salvar" type="submit">Salvar</button>
   <h1 id="title-page">Guardar Receita</h1>
 
-  <form class="centralize">
-    <div class="test">
-      
+  <form class="centralize" style="margin-top: 7%;">
+    <div id="form">
+      <div class="line">
+        <div>
+          <label class="title-label">Título</label><br>
+          <input type="text" class="estilinho" value="title" id="input-form" />
+        </div>
 
-      <div class="esquerda">
-        <label class="title-label">Título</label><br>
-        <input type="text" class="estilinho" value="title" id="input-form"/>
+        <div>
+          <label class="title-label">Nível</label><br>
+          <select class="estilinho" id="select-2" name="level">
+            <option value="facil">Fácil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </div>
       </div>
 
-      <div class="direita">
-        <label class="title-label">Nível</label><br>
-        <select class="estilinho" id="select" name="level">
-          <option value="facil">Fácil</option>
-          <option value="medio">Médio</option>
-          <option value="dificil">Difícil</option>
-        </select>
+      <div class="description" style="margin-top: 5%;">
+        <label class="title-label">Descrição</label><br>
+        <textarea value="description" id="txtAnswer" class="estilinho" rows="6" cols="56"
+          placeholder="Passo a passo"></textarea>
       </div>
-      
 
       <div class="centralize">
-        <div class="esquerda">
-          <label class="title-label">Descrição</label><br>
-          <textarea value="description" id="txtAnswer" class="estilinho" rows="6" cols="53"
-            placeholder="Passo a passo"></textarea>
-          <button id="btn" class="btn-in" type="submit">Guardar</button>
-        </div>
-        
+        <button id="btn" class="button-form" type="submit">Guardar</button>
       </div>
-      
     </div>
-    
-
   </form>
-
+  
 </body>
 
 <script src="index.js"></script>
