@@ -386,7 +386,13 @@ input-item {
 /* for main page*/
 .dad-option {
   width: 100%;
-  height: 40vh;
+  height: 25vh;
+  display: flex;
+  gap: 2.5rem;
+  grid-column: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .link-option {
@@ -407,9 +413,9 @@ input-item {
 }
 
 .option:hover {
-  width: 190px;
-  height: 190px;
-  transition: 0.5s;
+  cursor: pointer;
+  scale: 1.08;
+  transition: 0.3s;
 }
 
 /*for pages of forms*/
