@@ -13,7 +13,7 @@
 
 <body>
   <nav>
-    <img id="opcoes" src="/img/opcoes.png" />
+    <img id="menu" src="/img/opcoes.png" />
     <a href="/main.html">
       <img id="sair" src="/img/sair.png" />
     </a>
@@ -23,38 +23,37 @@
     <img src="/img/logo.png" id="logo" />
   </div>
 
+  <button id="salvar" type="submit">Salvar</button>
   <h1 id="title-page">Guardar Receita</h1>
 
-  <form class="centralize" onsubmit="sendRecipe();return false" id="recipe">
-    <div class="test">
-      <div class="centralize">
-
-        <div class="esquerda">
+  <form class="centralize" style="margin-top: 7%;">
+    <div id="form">
+      <div class="line">
+        <div>
           <label class="title-label">Título</label><br>
-          <input type="text" class="estilinho" name="title" />
+          <input type="text" class="estilinho" value="title" id="input-form" />
         </div>
 
-        <div class="direita">
+        <div>
           <label class="title-label">Nível</label><br>
-          <select class="estilinho" id="select" name="level">
-            <option value="Fácil">Fácil</option>
-            <option value="Médio">Médio</option>
-            <option value="Difícil">Difícil</option>
+          <select class="estilinho" id="select-2" name="level">
+            <option value="facil">Fácil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Difícil</option>
           </select>
         </div>
+      </div>
 
+      <div class="description" style="margin-top: 5%;">
+        <label class="title-label">Descrição</label><br>
+        <textarea name="description" id="txtAnswer" class="estilinho" rows="6" cols="56"
+          placeholder="Passo a passo"></textarea>
       </div>
 
       <div class="centralize">
-        <div class="esquerda">
-          <label class="title-label">Descrição</label><br>
-          <textarea name="description" id="txtAnswer" class="estilinho" rows="6" cols="53"
-            placeholder="Passo a passo"></textarea>
-        </div>
-
+        <button id="btn" class="button-form" type="submit">Guardar</button>
       </div>
     </div>
-    <button id="btn" class="btn-in" type="submit">Guardar</button>
   </form>
 
 </body>
