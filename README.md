@@ -18,3 +18,5 @@
 - CSS
 - JS
 
+OBS: Server por padrão rodará na porta 8081, caso esteja frequentando algum erro de caminho, verificar porta no server.js
+
