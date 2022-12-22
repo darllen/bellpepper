@@ -34,16 +34,24 @@ app.post('/recipe', (req,res)=>{
 	var title = req.body.title;
 	var level = req.body.level;
 	var description = req.body.description;
+	var imgLink = req.body.imgLink;
 	
-	var newRecipe = {title:title, level:level, description:description};
+	var newRecipe = {id: null, title:title, level:level, description:description, imgLink: imgLink};
 	
 	fs.readFile('recipes.json','utf8',(erro, texto)=>{
 		if (erro)
 		throw "Deu algum erro: "+erro;
 		
 		var meuBD = JSON.parse(texto);
-		meuBD.recipes.push(newRecipe);
+		for (recipe in meuBD.recipes) {
+			lastID = meuBD.recipes[recipe].id
+		}
+
+		if (!lastID) lastID = 0
 		
+		newRecipe.id = parseFloat(lastID) + 1
+		meuBD.recipes.push(newRecipe);
+
 		var meuBDString = JSON.stringify(meuBD);
 		
 		fs.writeFile('recipes.json',meuBDString,(erro)=>{
