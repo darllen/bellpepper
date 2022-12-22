@@ -496,30 +496,6 @@ input-item {
   padding-left: 10%;
 }
 
-.centralize button {
-  margin-top: 5%;
-}
-
-#salvar {
-  float: right;
-  width: 4rem;
-  height: 4rem;
-  background-color: #f8dcb0;
-  border-radius: 50%;
-  display: flex;
-  transition: 0.4s;
-  cursor: pointer;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-  color: #d1830d;
-  border: none;
-  font-weight: bold;
-  font-family: "Inter", sans-serif;
-  padding-left: 1em;
-  padding-top: 1.5em;
-  padding-right: 1em;
-  margin-right: 5%;
-}
-
 form{
   margin-bottom: 10%;
 }
