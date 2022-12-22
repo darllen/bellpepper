@@ -29,12 +29,11 @@ app.get('/registerRecipe',(req,res)=>{
 });
 
 
-app.post('/recipe', urlEncodedParser, (req,res)=>{
+app.post('/recipe', (req,res)=>{
 	
 	var title = req.body.title;
 	var level = req.body.level;
 	var description = req.body.description;
-	console.log(req)
 	
 	var newRecipe = {title:title, level:level, description:description};
 	
