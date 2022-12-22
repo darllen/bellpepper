@@ -8,6 +8,7 @@
   <title>Procurar Receita</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/reset.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -24,12 +25,13 @@
 
   <h1 id="title-page">Buscar Receita</h1>
 
-  <form onsubmit="Exibir();return false" class="centralize" class="in">
-    <input onclick="startListener(this)" type="text" id="inpt" class="estilinho" placeholder="Pesquisar Receita..." />
-    <select class="estilinho" id="select">
+  <form onsubmit="getRecipes();return false" class="centralize" class="in" id="searchRecipe">
+    <input name="title" type="text" id="inpt" class="estilinho" placeholder="Pesquisar Receita..." />
+    <select name="level" class="estilinho" id="select">
       <option value="">Todas as categorias</option>
-      <option value="">=> Mais fácil</option>
-      <option value="">=> Mais difícil</option>
+      <option value="Fácil">Fácil</option>
+      <option value="Médio">Normal</option>
+      <option value="Difícil">Difícil</option>
     </select>
     <button id="btn" type="submit">Procurar</button>
   </form>
@@ -42,8 +44,7 @@
 
 </body>
 
-<script src="index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="../../api/recipes.js"></script>
+<script src="search.js"></script>
 
 </html>

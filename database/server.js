@@ -57,34 +57,40 @@ app.post('/recipe', (req,res)=>{
 	});
 });
 
-
-
-app.get('/buscaProduto',(req,res)=>{
-	var form = "<form action='/recipe' method='GET'>";
-	form+="<label>Título: </label><input type='text' name='title'><br>";
-	form+="<label>Dificuldade: </label><input type='text' name='level'>";
-	form+="<button>Buscar</button></form>";
-	
-	res.send('<div>Procure o seu produto.</div><br>'+form);
-});
-
 app.get('/recipe', (req,res)=>{
 	
 	var title = req.query.title;
 	var level = req.query.level;
-	
-	console.log(req.query);
 		
 	fs.readFile('recipes.json','utf8',(erro, texto)=>{
 		if (erro)
 			throw "Deu algum erro: "+erro;
 		var meuBD = JSON.parse(texto);
 		var recipes = meuBD.recipes;
-		console.log(meuBD);
+
+		if(title && !level) {
+
+			var encontrado = recipes.filter(p => (p.title.toLowerCase().includes(title.toLowerCase())));
+			res.send(encontrado)
+			return
+
+		} else if(title && level) {
+			var encontrado = recipes.filter(p => (p.title.toLowerCase().includes(title.toLowerCase())) && p.level.toLowerCase().includes(level.toLowerCase()));
+			res.send(encontrado)
+			return
+
+		} else if(!title && level) {
+			var encontrado = recipes.filter(p => (p.level.toLowerCase().includes(level.toLowerCase())));
+			res.send(encontrado)
+			return
+
+		} else {
+			var encontrado = recipes
+			res.send(encontrado)
+			return
+		}
 		
-		var encontrado = recipes.filter(p => (p.title.toLowerCase().includes(title.toLowerCase())) && p.level.toLowerCase().includes(level.toLowerCase()));
 		
-		res.send(encontrado);
 	})
 });
 
