@@ -30,17 +30,25 @@ body {
   background-color: #e6ebf6;
   background-attachment: fixed;
 }
+
 nav {
   height: 8vh;
 }
+
 nav img {
   width: 35px;
   margin-top: 1%;
 }
+
 nav img:hover {
   width: 40px;
   transition: 0.5s;
   cursor: pointer;
+}
+.centralize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #menu {
@@ -53,18 +61,15 @@ nav img:hover {
 }
 
 .pai {
-  display: flex;
   margin-top: 5%;
-  align-items: center;
-  justify-content: center;
 }
 
-.pai #logo {
+#logo {
   height: 300px;
   width: 300px;
 }
 
-.pai #sub-logo {
+#sub-logo {
   width: 40%;
   color: #284982;
   font-size: 18px;
@@ -84,13 +89,13 @@ nav img:hover {
   margin-bottom: 7%;
 }
 
-.in #inpt {
+#inpt {
   width: 50%;
   height: 6vh;
   padding-left: 1em;
 }
 
-.in .estilinho {
+.estilinho {
   border-radius: 3px;
   border: 1px solid #e6ebf6;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
@@ -99,12 +104,12 @@ nav img:hover {
   color: #8c8c8c;
 }
 
-.in .estilinho:focus {
+.estilinho:focus {
   border: 1px solid #ffa924;
   outline: none;
 }
 
-.in #btn {
+#btn {
   margin-left: 3%;
   width: 80px;
   height: 5vh;
@@ -118,7 +123,7 @@ nav img:hover {
   transition: 0.1s;
 }
 
-.in #btn:hover {
+#btn:hover {
   transform: scale(1.1);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   background: #ffcc8c;
@@ -270,15 +275,16 @@ nav img:hover {
 
 .title-line {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   width: 100%;
   margin: auto;
   margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
   font-weight: bold;
   color: #353535;
 }
+
 /* session end */
 
 .input-item {
@@ -296,17 +302,19 @@ nav img:hover {
   color: #284982;
   padding-left: 4%;
 }
+
 .input-item:focus {
   outline: none;
 }
+
 /* FOR MAIN PAGE*/
 .dad-option {
   width: 100%;
   height: 25vh;
   display: flex;
-  margin-top: 5%;
   align-items: center;
   justify-content: center;
+  margin-top: 5%;
 }
 
 .aaa {
@@ -340,6 +348,7 @@ nav img:hover {
   padding-left: 0.8;
   cursor: pointer;
 }
+
 .dad-recipes-default {
   display: flex;
   align-items: center;
@@ -366,3 +375,35 @@ footer {
   height: 5vh;
   background-color: #336ab8;
 }
+
+#title-page {
+  font-size: 2em;
+  font-family: "Inter", sans-serif;
+  color: #284982;
+  font-weight: bold;
+  margin-left: 7%;
+  margin-bottom: 7%;
+}
+
+.title-label {
+  font-size: 1.2em;
+  font-family: "Inter", sans-serif;
+  color: #FFA924;
+  font-weight: bold;
+
+}
+
+.test {
+  width: 80%;
+  
+}
+
+.esquerda {
+  position: relative;
+}
+
+.direita {
+  margin-left: 5%;
+  position: relative;
+}
+
