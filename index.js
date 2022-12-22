@@ -2,12 +2,12 @@ function Exibir(input = '') {
   if (!(entrada.value || input)) {
     overlay();
     return;
-    
+
   } else if (input) {
     entrada.value = input
   }
 
-  
+
 
   var divList = document.getElementById("list");
   let item = document.createElement("div");
@@ -48,68 +48,68 @@ function Exibir(input = '') {
 /* Session Edit Item */
 function editItem(item) {
   inEdit = true;
-  
+
   let itemActionsSaveChange = document.createElement("div");
-  
-  
+
+
   const divParent = getItemTextDiv(item);
   const paragraph = getItemTextDiv(item).children[0].children[1];
   const checkbox = getItemTextDiv(item).children[0].children[0];
   const actionsEdit = getItemTextDiv(item).children[3]
   const inputEdit = getItemTextDiv(item).children[0].children[2]
   const actionsDiv = getItemTextDiv(item).children[2];
-  
+
   inputEdit.focus()
   inputEdit.style.display = 'block'
   inputEdit.value = paragraph.innerHTML
-  
+
   paragraph.style.display = "none";
   checkbox.style.display = "none";
   actionsDiv.style.display = "none";
 
   actionsEdit.style.display = "grid";
-  
-  
-  
+
+
+
   divParent.appendChild(itemActionsSaveChange);
-  
+
   console.log(getItemTextDiv(item).children[0].children)
   //divParent.innerHTML += '<div class="item-actions" id="edit"><svg xmlns="http://www.w3.org/2000/svg" class="primary-button success-color" onclick="saveEdit(this)" height="32" width="32" viewbox="0 0 48 48"><path d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="secondary-button danger-color" onclick="exitEdit(this)" height="32" width="32" viewbox="0 0 48 48"><path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/></svg></div>';
   const actionsEditDiv = divParent.children[4];
 
   actionsEditDiv.style.display = "grid";
-  
+
 }
 
-  function exitEdit(item) {
-    inEdit = false
-    const divParent = getItemTextDiv(item);
-    const divText = getItemTextDiv(item).children[0];
-    const paragraph = getItemTextDiv(item).children[0].children[1];
-    const checkbox = getItemTextDiv(item).children[0].children[0];
-    const inputEdit = getItemTextDiv(item).children[0].children[2]
+function exitEdit(item) {
+  inEdit = false
+  const divParent = getItemTextDiv(item);
+  const divText = getItemTextDiv(item).children[0];
+  const paragraph = getItemTextDiv(item).children[0].children[1];
+  const checkbox = getItemTextDiv(item).children[0].children[0];
+  const inputEdit = getItemTextDiv(item).children[0].children[2]
 
-    actionsEditDiv = divParent.children[3];
-    actionsDiv = getItemTextDiv(item).children[2];
+  actionsEditDiv = divParent.children[3];
+  actionsDiv = getItemTextDiv(item).children[2];
 
-    actionsEditDiv.style.display = 'none'
-    inputEdit.style.display = 'none'
-    actionsDiv.style.display = 'grid'
-    paragraph.style.display = 'grid'
-    checkbox.style.display = ''
+  actionsEditDiv.style.display = 'none'
+  inputEdit.style.display = 'none'
+  actionsDiv.style.display = 'grid'
+  paragraph.style.display = 'grid'
+  checkbox.style.display = ''
 
-    console.log(defaultParagraphValue)
-  }
+  console.log(defaultParagraphValue)
+}
 
-  function saveEdit(item) {
-    const paragraph = getItemTextDiv(item).children[0].children[1];
-    const inputEdit = getItemTextDiv(item).children[0].children[2]
-    console.log(paragraph)
-    console.log(inputEdit.value)
-    paragraph.innerHTML = inputEdit.value
-    console.log(paragraph)
-    exitEdit(item)
-  }
+function saveEdit(item) {
+  const paragraph = getItemTextDiv(item).children[0].children[1];
+  const inputEdit = getItemTextDiv(item).children[0].children[2]
+  console.log(paragraph)
+  console.log(inputEdit.value)
+  paragraph.innerHTML = inputEdit.value
+  console.log(paragraph)
+  exitEdit(item)
+}
 
 
 /* session end */

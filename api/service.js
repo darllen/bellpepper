@@ -6,6 +6,6 @@ export function getRecipes(URL = 'https://voluble-conkies-26aad6.netlify.app/.ne
   resp = axios.get(URL)
     .then(data => console.log(data))
     .catch(err => console.log(err))
-  
+
   return resp
 }

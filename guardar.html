@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guardar Receita</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <img id="menu" src="img/opcoes.png" />
+    <a href="main.html">
+      <img id="sair" src="img/sair.png" />
+    </a>
+  </nav>
+
+  <div class="centralize" class="pai" style="margin-top: 0px;">
+    <img src="img/logo.png" id="logo" />
+  </div>
+
+  <h1 id="title-page">Guardar Receita</h1>
+
+  <form class="centralize">
+    <div class="test">
+      
+
+      <div class="esquerda">
+        <label class="title-label">Título</label><br>
+        <input type="text" class="estilinho" value="title" id="input-form"/>
+      </div>
+
+      <div class="direita">
+        <label class="title-label">Nível</label><br>
+        <select class="estilinho" id="select" name="level">
+          <option value="facil">Fácil</option>
+          <option value="medio">Médio</option>
+          <option value="dificil">Difícil</option>
+        </select>
+      </div>
+      
+
+      <div class="centralize">
+        <div class="esquerda">
+          <label class="title-label">Descrição</label><br>
+          <textarea value="description" id="txtAnswer" class="estilinho" rows="6" cols="53"
+            placeholder="Passo a passo"></textarea>
+          <button id="btn" class="btn-in" type="submit">Guardar</button>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+  </form>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

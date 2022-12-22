@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAIN - bell pepper</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <nav>
-      <img id="opcoes" src="img/opcoes.png" />
-      <img id="sair" src="img/sair.png" />
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAIN - bell pepper</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="centralize" class="pai">
-      <img src="img/logo.png" id="logo" />
-      <p id="sub-logo"></p>
-    </div>
+<body>
+  <nav>
+    <img id="menu" src="img/opcoes.png" />
+    <img id="sair" src="img/sair.png" />
+  </nav>
 
-    <div class="dad-option">
-      <div class="option-box">
-        <a class="aaa" href="recipes/search/search.html">
-          <button class="option" type="button">Buscar Receita</button>
-        </a>
-      </div>
-      <div class="option-box">
-        <a class="aaa" href="recipes/register/register.html">
-          <button class="option" type="button">Guardar Receita</button>
-        </a>
-      </div>
-      <div class="option-box">
-        <a class="aaa" href="index.html">
-          <button class="option" type="button">Lista de Compras</button>
-        </a>
-      </div>
-    </div>
-  </body>
+  <div class="centralize" class="pai">
+    <img src="img/logo.png" id="logo" />
+    <p id="sub-logo"></p>
+  </div>
 
-  <script src="index.js"></script>
+  <div class="dad-option">
+    <a class="aaa" href="buscar.html">
+      <button class="option" type="submit">Buscar Receita</button>
+    </a>
+    <a class="aaa" href="guardar.html">
+      <button class="option" type="submit">Guardar Receita</button>
+    </a>
+    <a class="aaa" href="index.html">
+      <button class="option" type="submit">Lista de Compras</button>
+    </a>
+  </div>
+
+</body>
+
+<script src="index.js"></script>
+
 </html>
