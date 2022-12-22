@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guardar Receita</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/reset.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <img id="opcoes" src="/img/opcoes.png" />
+    <a href="/main.html">
+      <img id="sair" src="/img/sair.png" />
+    </a>
+  </nav>
+
+  <div class="centralize" class="pai" style="margin-top: 0px;">
+    <img src="/img/logo.png" id="logo" />
+  </div>
+
+  <h1 id="title-page">Guardar Receita</h1>
+
+  <form class="centralize" onsubmit="sendRecipe();return false" id="recipe">
+    <div class="test">
+      <div class="centralize">
+
+        <div class="esquerda">
+          <label class="title-label">Título</label><br>
+          <input type="text" class="estilinho" name="title" />
+        </div>
+
+        <div class="direita">
+          <label class="title-label">Nível</label><br>
+          <select class="estilinho" id="select" name="level">
+            <option value="Fácil">Fácil</option>
+            <option value="Médio">Médio</option>
+            <option value="Difícil">Difícil</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="centralize">
+        <div class="esquerda">
+          <label class="title-label">Descrição</label><br>
+          <textarea name="description" id="txtAnswer" class="estilinho" rows="6" cols="53"
+            placeholder="Passo a passo"></textarea>
+        </div>
+
+      </div>
+    </div>
+    <button id="btn" class="btn-in" type="submit">Guardar</button>
+  </form>
+
+</body>
+
+<script src="register.js"></script>
+
+</html>
