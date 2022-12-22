@@ -1,63 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Procurar Receita</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/reset.css" />
-  </head>
 
-  <body>
-    <nav>
-      <img id="opcoes" src="/img/opcoes.png" />
-      <a href="/main.html">
-        <img id="sair" src="/img/sair.png" />
-      </a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procurar Receita</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/reset.css" />
+</head>
 
-    <div class="centralize" class="pai">
-      <img src="/img/logo.png" id="logo" />
-    </div>
+<body>
+  <nav>
+    <img id="menu" src="/img/opcoes.png" />
+    <a href="/main.html">
+      <img id="sair" src="/img/sair.png" />
+    </a>
+  </nav>
 
-    <form onsubmit="Exibir();return false" class="in">
-      <input
-        onclick="startListener(this)"
-        type="text"
-        id="inpt"
-        class="estilinho"
-        placeholder="Pesquisar Receita..."
-      />
-      <select class="estilinho" id="select">
-        <option value="">Todas as categorias</option>
-        <option value="">=> Mais fácil</option>
-        <option value="">=> Mais difícil</option>
-      </select>
-      <button id="btn" class="btn-in" type="submit">Procurar</button>
-    </form>
+  <div class="centralize" class="pai">
+    <img src="/img/logo.png" id="logo" />
+  </div>
 
-    <div>DIV DE EXIBIÇÃO</div>
+  <h1 id="title-page">Buscar Receita</h1>
 
-    <div class="dad-recipes-default">
-      <div class="card">
-        <img src="/img/food.jpg" alt="food" />
-        <h2>Lasanha</h2>
-      </div>
+  <form onsubmit="Exibir();return false" class="centralize" class="in">
+    <input onclick="startListener(this)" type="text" id="inpt" class="estilinho" placeholder="Pesquisar Receita..." />
+    <select class="estilinho" id="select">
+      <option value="">Todas as categorias</option>
+      <option value="">=> Mais fácil</option>
+      <option value="">=> Mais difícil</option>
+    </select>
+    <button id="btn" type="submit">Procurar</button>
+  </form>
 
-      <div class="card">
-        <img src="/img/food.jpg" alt="food" />
-        <h2>Lasanha</h2>
-      </div>
+  <div></div><br><br>
 
-      <div class="card">
-        <img src="/img/food.jpg" alt="food" />
-        <h2>Lasanha</h2>
-      </div>
-    </div>
+  <div class="centralize" class="cards" id="cards">
+    <img src="../img/loading-icon.png" style="width: 5em;">
+  </div>
 
-    <footer></footer>
-  </body>
+</body>
 
-  <script src="index.js"></script>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="api/recipes.js"></script>
+
 </html>
