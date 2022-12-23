@@ -47,7 +47,7 @@ app.post('/recipe', (req,res)=>{
 			lastID = meuBD.recipes[recipe].id
 		}
 
-		if (!lastID) lastID = 0
+		if (!meuBD.recipes[0]) lastID = 0
 		
 		newRecipe.id = parseFloat(lastID) + 1
 		meuBD.recipes.push(newRecipe);
