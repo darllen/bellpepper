@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+
+body {
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  background-color: #FFF;
+}
+footer {
+  height: 5rem;
+}
+
+img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 33rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #EFF6FF;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border-bottom: solid 10px #1E3A8A;
+}
+.title {
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #284982;
+}
+.sub-title {
+  color: #475569;
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.25px;
+}
+
+.link-signup {
+  text-decoration: none;
+  color: #284982;
+}
+.link-signup:hover {
+  text-decoration: underline;
+  text-decoration-color: #9cc7ff;
+  text-decoration-thickness: 0.12rem;
+}
+
+.login-button {
+  cursor: pointer;
+  margin-top: 2rem;
+  border-radius: 2.5rem;
+  border: none;
+  background-color: #DBEAFE;
+  width: 5.5rem;
+  height: 2.5rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  transition: 0.2s;
+}
+
+.login-button:hover {
+  box-shadow: 0.5px 1px 4px 0.2px  rgba(0,0,0,0.19)
+}
+
