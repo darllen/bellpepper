@@ -5,6 +5,40 @@ const port = 8081;
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
+// baixar mariadb, criar tabela bellpepper e usuario (Ou não)
+
+const sequelize = require('sequelize')
+const database = new sequelize('bellpepper', 'user1', 'password1', {
+	host: 'localhost',
+	dialect: 'mariadb'
+})
+
+database.authenticate().then(() => {
+	console.log('Conectado')
+}).catch(error => {
+	console.log('Erro ao conectar', error)
+})
+
+const Receita = database.define('receita', {
+	id: {
+		type: sequelize.INTEGER,
+		autoIncrement: true,
+		primaryKey: true
+	},
+	title: {
+		type: sequelize.STRING
+	},
+	level: {
+		type: sequelize.STRING
+	},
+	description: {
+		type: sequelize.STRING
+	}
+})
+
+Receita.sync()
+
+
 app.use(cors({
 	origin: '*'
 }));
@@ -13,20 +47,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-	res.send('<p style="background-color:pink;">Teste</p>');
-});
-
-app.get('/registerRecipe',(req,res)=>{
-	var form = "<form action='/recipe' method='POST'>";
-	form+="<label>Título: </label><input type='text' name='title'><br>";
-	form+="<label>Dificuldade: </label><input type='text' name='level'><br>";
-	form+="<label>Descrição: </label><input type='text' name='description'><br>";
-	form+="<button>Cadastrar</button></form>";
-	
-	res.send('<div>Cadastre um novo produto.</div><br>'+form);
-});
 
 
 app.post('/recipe', (req,res)=>{
