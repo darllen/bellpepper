@@ -5,38 +5,17 @@ const port = 8081;
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
+const connection = require('./models/connection')
+const bellpepper = require('./models/bellpepper')
+
+connection.database.authenticate().then(() => {
+	console.log("Conectado!!")
+}).catch((error) => {
+	console.log(error)
+})
+
+connection.database.sync({alter: true})
 // baixar mariadb, criar tabela bellpepper e usuario (Ou não)
-
-const sequelize = require('sequelize')
-const database = new sequelize('bellpepper', 'user1', 'password1', {
-	host: 'localhost',
-	dialect: 'mariadb'
-})
-
-database.authenticate().then(() => {
-	console.log('Conectado')
-}).catch(error => {
-	console.log('Erro ao conectar', error)
-})
-
-const Receita = database.define('receita', {
-	id: {
-		type: sequelize.INTEGER,
-		autoIncrement: true,
-		primaryKey: true
-	},
-	title: {
-		type: sequelize.STRING
-	},
-	level: {
-		type: sequelize.STRING
-	},
-	description: {
-		type: sequelize.STRING
-	}
-})
-
-Receita.sync()
 
 
 app.use(cors({
