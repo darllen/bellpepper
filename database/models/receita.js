@@ -14,7 +14,11 @@ const Receita = connection.database.define('receita', {
 	},
 	description: {
 		type: connection.sequelize.STRING
-	}
+	},
+	imgLink: {
+		type: connection.sequelize.STRING
+	},
+
 })
 
 module.exports = Receita

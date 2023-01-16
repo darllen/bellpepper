@@ -6,7 +6,11 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 
 const connection = require('./models/connection')
-const bellpepper = require('./models/bellpepper')
+const bellpepper = require('./models/bellpepper');
+const { sequelize, database } = require('./models/connection');
+const { Op } = require("sequelize");
+
+const Receita = require('./models/receita');
 
 connection.database.authenticate().then(() => {
 	console.log("Conectado!!")
@@ -14,7 +18,7 @@ connection.database.authenticate().then(() => {
 	console.log(error)
 })
 
-connection.database.sync({alter: true})
+connection.database.sync({ alter: true })
 // baixar mariadb, criar tabela bellpepper e usuario (Ou não)
 
 
@@ -23,70 +27,86 @@ app.use(cors({
 }));
 app.use(bodyParser.urlencoded())
 app.use(bodyParser.urlencoded({
-  extended: true
+	extended: true
 }));
 app.use(bodyParser.json());
 
+/** 
+app.post('/recipe', (req, res) => {
 
-app.post('/recipe', (req,res)=>{
-	
 	var title = req.body.title;
 	var level = req.body.level;
 	var description = req.body.description;
 	var imgLink = req.body.imgLink;
-	
-	var newRecipe = {id: null, title:title, level:level, description:description, imgLink: imgLink};
-	
-	fs.readFile('recipes.json','utf8',(erro, texto)=>{
+
+	var newRecipe = { id: null, title: title, level: level, description: description, imgLink: imgLink };
+
+	fs.readFile('recipes.json', 'utf8', (erro, texto) => {
 		if (erro)
-		throw "Deu algum erro: "+erro;
-		
+			throw "Deu algum erro: " + erro;
+
 		var meuBD = JSON.parse(texto);
 		for (recipe in meuBD.recipes) {
 			lastID = meuBD.recipes[recipe].id
 		}
 
 		if (!meuBD.recipes[0]) lastID = 0
-		
+
 		newRecipe.id = parseFloat(lastID) + 1
 		meuBD.recipes.push(newRecipe);
 
 		var meuBDString = JSON.stringify(meuBD);
-		
-		fs.writeFile('recipes.json',meuBDString,(erro)=>{
-			if (erro){
-				throw "Deu algum erro: "+erro;
+
+		fs.writeFile('recipes.json', meuBDString, (erro) => {
+			if (erro) {
+				throw "Deu algum erro: " + erro;
 			}
-			else{
+			else {
 				res.send(meuBDString);
 			}
 		});
 	});
 });
+*/
 
-app.get('/recipe', (req,res)=>{
-	
+app.post('/recipe', (req, res) => {
+	recipe = Receita.create({
+		title: req.body.title,
+		level: req.body.level,
+		description: req.body.description,
+		imgLink: req.body.imgLink
+	}).then(() => {
+		console.log('`Receita inserida')
+	}).catch((error) => {
+		console.log(error)
+	})
+
+})
+
+/*
+app.get('/recipe', (req, res) => {
+
 	var title = req.query.title;
 	var level = req.query.level;
-		
-	fs.readFile('recipes.json','utf8',(erro, texto)=>{
+
+	fs.readFile('recipes.json', 'utf8', (erro, texto) => {
 		if (erro)
-			throw "Deu algum erro: "+erro;
+			throw "Deu algum erro: " + erro;
 		var meuBD = JSON.parse(texto);
 		var recipes = meuBD.recipes;
 
-		if(title && !level) {
+		if (title && !level) {
 
 			var encontrado = recipes.filter(p => (p.title.toLowerCase().includes(title.toLowerCase())));
 			res.send(encontrado)
 			return
 
-		} else if(title && level) {
+		} else if (title && level) {
 			var encontrado = recipes.filter(p => (p.title.toLowerCase().includes(title.toLowerCase())) && p.level.toLowerCase().includes(level.toLowerCase()));
 			res.send(encontrado)
 			return
 
-		} else if(!title && level) {
+		} else if (!title && level) {
 			var encontrado = recipes.filter(p => (p.level.toLowerCase().includes(level.toLowerCase())));
 			res.send(encontrado)
 			return
@@ -96,9 +116,37 @@ app.get('/recipe', (req,res)=>{
 			res.send(encontrado)
 			return
 		}
-		
-		
+
+
 	})
+});
+*/
+
+app.get('/recipe', (req, res) => {
+
+	var title = req.query.title;
+	var level = req.query.level;
+
+	debugger
+	Receita.findAll(
+		{
+			where: {
+				title: {
+					[Op.like]: `%${title}%` 
+				},
+				level:  {
+					[Op.like]: `%${level}%`
+				}
+			}
+		}
+	).then((recipes) => {
+		res.send(recipes);
+		
+	}).catch(function (erro) {
+		console.log("Erro na consulta: " + erro)
+		res.send("Ocorreu algum problema na consulta");
+	})
+
 });
 
 
