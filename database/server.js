@@ -132,22 +132,34 @@ app.get('/recipe', (req, res) => {
 		{
 			where: {
 				title: {
-					[Op.like]: `%${title}%` 
+					[Op.like]: `%${title}%`
 				},
-				level:  {
+				level: {
 					[Op.like]: `%${level}%`
 				}
 			}
 		}
 	).then((recipes) => {
 		res.send(recipes);
-		
+
 	}).catch(function (erro) {
 		console.log("Erro na consulta: " + erro)
 		res.send("Ocorreu algum problema na consulta");
 	})
 
 });
+
+app.delete('/recipe', async(req, res) => {
+	id = req.query.id
+	console.log(`oi`)
+	await Receita.destroy({
+		where: {
+			id: id
+		}
+	}).then(() => {
+		res.send('Receita excluida')
+	})
+})
 
 
 app.listen(port, () => {
