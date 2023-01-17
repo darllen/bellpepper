@@ -42,6 +42,46 @@
     <img src="../../img/loading-icon.png" style="width: 5em;">
   </div>
 
+  <div class="overlay" id="overlay">
+    <div class="card-overlay" style="width: 50rem; padding-right: 4.2rem; padding-bottom: 1rem;">
+    
+      
+      <form class="centralize" onsubmit="sendRecipe();return false" id="recipe" style="margin-top: 7%;">
+        <div id="form">
+          <div class="line">
+            <div>
+              <label class="title-label">Título</label><br>
+              <input type="text" class="estilinho" name="title" id="input-form" />
+            </div>
+    
+            <div>
+              <label class="title-label">Nível</label><br>
+              <select class="estilinho" id="select-2" name="level">
+                <option value="Fácil">Fácil</option>
+                <option value="Médio">Médio</option>
+                <option value="Difícil">Difícil</option>
+              </select>
+            </div>
+            <div>
+              <label class="title-label">URL da imagem</label><br>
+              <input type="text" class="estilinho" name="imgLink" id="input-form" />
+            </div>
+          </div>
+    
+          <div class="description" style="margin-top: 5%;">
+            <label class="title-label">Descrição</label><br>
+            <textarea name="description" id="txtAnswer" class="estilinho" rows="6" cols="56"
+              placeholder="Passo a passo"></textarea>
+          </div><br><br><br><br>
+          <input type="text" style="display: none;" name="id">
+          <div class="centralize">
+            <button id="btn" class="button-form" type="button" onclick="sendEdit()">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -124,32 +124,74 @@ app.get('/recipe', (req, res) => {
 
 app.get('/recipe', (req, res) => {
 
+	var id = req.query.id
 	var title = req.query.title;
 	var level = req.query.level;
+	console.log(title)
 
 	debugger
-	Receita.findAll(
-		{
-			where: {
-				title: {
-					[Op.like]: `%${title}%`
-				},
-				level: {
-					[Op.like]: `%${level}%`
+	if (!id) {
+		Receita.findAll(
+			{
+				where: {
+					title: {
+						[Op.like]: `%${title}%`
+					},
+					level: {
+						[Op.like]: `%${level}%`
+					}
 				}
 			}
-		}
-	).then((recipes) => {
-		res.send(recipes);
+		).then((recipes) => {
+			res.send(recipes);
 
-	}).catch(function (erro) {
-		console.log("Erro na consulta: " + erro)
-		res.send("Ocorreu algum problema na consulta");
-	})
+		}).catch(function (erro) {
+			console.log("Erro na consulta: " + erro)
+			res.send("Ocorreu algum problema na consulta");
+		})
+	} else {
+		Receita.findOne(
+			{
+				where: {
+					
+						id: id
+					
+				}
+			}
+		).then((recipe) => {
+			console.log(recipe)
+			res.send(recipe);
+
+		}).catch(function (erro) {
+			console.log("Erro na consulta: " + erro)
+			res.send("Ocorreu algum problema na consulta");
+		})
+	}
+
 
 });
 
-app.delete('/recipe', async(req, res) => {
+app.get('/editRecipe', async (req, res) => {
+	console.log(req.query.title)
+	const recipe = await Receita.update(
+	{
+		title: req.query.title,
+		level: req.query.level,
+		description: req.query.description,
+		imgLink: req.query.imgLink
+	}, 
+	{
+		where: {id: req.query.id}
+
+	}).then(() => {
+		console.log('Receita atualizada')
+	}).catch((error) => {
+		console.log(error)
+	})
+	
+})
+
+app.delete('/recipe', async (req, res) => {
 	id = req.query.id
 	console.log(`oi`)
 	await Receita.destroy({
