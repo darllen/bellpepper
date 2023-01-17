@@ -71,15 +71,11 @@ function overlay(item = null, action = "open") {
 }
 
 async function sendEdit() {
-  let overlay = document.getElementById("overlay");
-  debugger
   formElement = document.forms.recipe
   formData = new FormData(formElement)
   params = {id: formData.get('id'), title: formData.get('title'), level: formData.get('level'), description: formData.get('description'), imgLink: formData.get('imgLink')}
 
   const res = await axios.get('http://localhost:8081/editRecipe', {params}).then(getRecipes())
-  return
-
 }
 
 recipes = getRecipes(URL)
