@@ -22,15 +22,8 @@
     </div>
 
     <h1 id="title">Create Account</h1>
-    <form class="centralize">
+    <form class="centralize" id="user">
       <div class="form-box" class="in">
-        <input
-          type="text"
-          name="name"
-          placeholder="Nome"
-          id="inpt"
-          class="estilinho"
-        /><br />
         <input
           type="email"
           name="email"
@@ -46,11 +39,13 @@
           class="estilinho"
         /><br />
 
-        <button class="create-button">Create ></button>
+        <button class="create-button" type="button" onclick="sendUser()">Create ></button>
       </div>
     </form>
     <footer>
       <img id="desenho" src="../../img/pic.png" />
     </footer>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="cadastro.js"></script>
 </html>

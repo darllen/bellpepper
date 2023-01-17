@@ -11,6 +11,7 @@ const { sequelize, database } = require('./models/connection');
 const { Op } = require("sequelize");
 
 const Receita = require('./models/receita');
+const User = require('./models/user')
 
 connection.database.authenticate().then(() => {
 	console.log("Conectado!!")
@@ -200,6 +201,93 @@ app.delete('/recipe', async (req, res) => {
 		}
 	}).then(() => {
 		res.send('Receita excluida')
+	})
+})
+
+
+
+
+// user
+
+app.post('/user', (req, res) => {
+	user = User.create({
+		email: req.body.email,
+		password: req.body.password,
+	}).then(() => {
+		console.log('Usuário criado')
+	}).catch((error) => {
+		console.log(error)
+	})
+
+})
+
+app.get('/user', (req, res) => {
+
+	var id = req.query.id
+	var email = req.query.email || '';
+
+	debugger
+	if (!id) {
+		User.findAll(
+			{
+				where: {
+					email: {
+						[Op.like]: `%${email}%`
+					}
+				}
+			}
+		).then((users) => {
+			res.send(users);
+
+		}).catch(function (erro) {
+			console.log("Erro na consulta: " + erro)
+			res.send("Ocorreu algum problema na consulta");
+		})
+	} else {
+		User.findOne(
+			{
+				where: {
+						id: id
+				}
+
+			}).then((user) => {
+			console.log(user)
+			res.send(user);
+
+		}).catch(function (erro) {
+			console.log("Erro na consulta: " + erro)
+			res.send("Ocorreu algum problema na consulta");
+		})
+	}
+
+
+});
+
+app.get('/editUser', async (req, res) => {
+	console.log(req.query.title)
+	const user = await User.update(
+	{
+		email: req.query.email,
+		password: req.query.password,
+	}, 
+	{
+		where: {id: req.query.id}
+	}).then(() => {
+		console.log('Usuário atualizado')
+	}).catch((error) => {
+		console.log(error)
+	})
+	
+})
+
+app.delete('/user', async (req, res) => {
+	id = req.query.id
+	await User.destroy({
+		where: {
+			id: id
+		}
+	}).then(() => {
+		res.send('Usuário excluído')
 	})
 })
 
