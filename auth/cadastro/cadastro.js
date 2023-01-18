@@ -10,6 +10,4 @@ async function sendUser() {
   .catch(function (error) {
     console.log(error);
   });
-
-
 }

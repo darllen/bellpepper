@@ -15,7 +15,7 @@
     <a href="users/users.html">
       <img id="menu" src="img/do-utilizador.png" />
     </a>
-    <a href="auth/sign-in/sign-in.html">
+    <a onclick="signOut()" href="auth/sign-in/sign-in.html">
       <img id="sair" src="img/sair.png" />
     </a>
   </nav>
@@ -44,7 +44,9 @@
   </div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<script type="module" src="auth/auth.js"></script>
 <script src="index.js"></script>
 
 </html>

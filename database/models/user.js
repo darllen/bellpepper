@@ -16,6 +16,10 @@ const User = connection.database.define('user', {
 		type: connection.sequelize.STRING,
 		allowNull: false
 	},
+	token: {
+		type: connection.sequelize.STRING,
+		
+	},
 }, { timestamps: false,})
 
 module.exports = User

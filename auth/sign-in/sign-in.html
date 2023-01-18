@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <form class="form">
+      <form class="form" id="login-form">
         <div class="form-box">
           <div class="row">
             <label for="email">E-mail</label>
@@ -38,10 +38,12 @@
         </div>
 
         <div class="form-actions">
-          <button class="login-button">Login</button>
+          <button class="login-button" type="button" onclick="login()">Login</button>
         </div>
       </form>
     </div>
     <footer></footer>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="sign-in.js"></script>
 </html>

@@ -13,7 +13,7 @@
 <body>
   <nav>
     <img id="menu" src="img/opcoes.png" />
-    <a href="main.html">
+    <a onclick="signOut()" href="auth/sign-in/sign-in.html">
       <img id="sair" src="img/sair.png" />
     </a>
   </nav>
@@ -61,6 +61,33 @@
 </body>
 
 <script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+  async function signOut() {
+    const res = await axios.get('http://localhost:8081/sign-out', {})
+  }
+  async function auth() {
+
+    const res = await axios.get('http://localhost:8081/verifyToken', {})
+      .then(function (response) {
+        console.log(response);
+        redirect(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }
+
+  function redirect(data) {
+    if (data.data != 1) { window.location.href = "http://localhost:5500/auth/sign-in/sign-in.html"; }
+  }
+
+
+
+  auth()
+</script>
 
 </html>
 <!-- /bellpepper/api/recipes.html -->

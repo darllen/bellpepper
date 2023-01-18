@@ -4,14 +4,16 @@ const app = express();
 const port = 8081;
 const fs = require('fs');
 const bodyParser = require('body-parser');
-
+const crypto = require("crypto");
 const connection = require('./models/connection')
 const bellpepper = require('./models/bellpepper');
 const { sequelize, database } = require('./models/connection');
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 
 const Receita = require('./models/receita');
 const User = require('./models/user')
+
+
 
 connection.database.authenticate().then(() => {
 	console.log("Conectado!!")
@@ -22,6 +24,9 @@ connection.database.authenticate().then(() => {
 connection.database.sync({ alter: true })
 // baixar mariadb, criar tabela bellpepper e usuario (Ou não)
 
+
+var userToken = ''
+var userEmail = ''
 
 app.use(cors({
 	origin: '*'
@@ -291,8 +296,90 @@ app.delete('/user', async (req, res) => {
 	})
 })
 
+app.post('/sign-in', async (req, res) => {
+	email = req.body.email || ''
+	password = req.body.password || ''
+	console.log(email)
+	result = await User.findOne(
+		{
+			where: {
+				email: email,
+				password: password
+			}
+		}
+
+	)
+	console.log(result)
+	if (result) {
+		token = crypto.randomBytes(20).toString('hex')
+		userEmail = email
+		userToken = token
+		console.log(userToken)
+		User.update(
+			{
+				token: token
+			},
+			{
+				where: { email }
+			}
+		).then(() => {
+			res.send('1')
+		})
+	}
+	else {
+		res.send('Login não realizado')
+	}
+})
+
 
 app.listen(port, () => {
 	console.log(`Esta aplicação está escutando a
 	porta ${port}`)
 });
+
+app.get('/verifyToken', async (req, res) => {
+	console.log(userEmail)
+	result = await User.findOne(
+		{
+			where: {
+				email: userEmail,
+				token: userToken
+			}
+		}
+
+	)
+	if(result) {
+		res.send('1')
+	} else {
+		res.send('0')
+	}
+})
+
+app.get('/sign-out', async (req, res) => {
+	result = await User.findOne(
+		{
+			where: {
+				email: userEmail,
+				token: userToken
+			}
+		}
+
+	)
+	if (result) {
+		token = crypto.randomBytes(20).toString('hex')
+		userEmail = email
+		console.log(userToken)
+		User.update(
+			{
+				token: token
+			},
+			{
+				where: { email }
+			}
+		).then(() => {
+			res.send('1')
+		})
+	}
+	
+})
+

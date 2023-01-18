@@ -1,3 +1,28 @@
+async function signOut() {
+  const res = await axios.get('http://localhost:8081/sign-out', {})
+}
+
+async function auth() {
+
+  const res = await axios.get('http://localhost:8081/verifyToken', {})
+    .then(function (response) {
+      console.log(response);
+      redirect(response)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+}
+
+function redirect(data) {
+  if (data.data != 1) { window.location.href = "http://localhost:5500/auth/sign-in/sign-in.html"; }
+}
+
+
+
+auth()
+
 async function getUsers() {
   let overlay = document.getElementById("overlay");
   overlay.style.display = "none"
