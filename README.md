@@ -5,6 +5,9 @@
 
 
 # Comandos de configuração
+Link para a pagina home
+/main.html
+
 <p>cd database (Entrar na pasta database)</p>
 <p>npm install (Instalar dependências)</p>
 <p>nodemon server // npx nodemon server(Caso o primeiro comando não funcione)</p>
